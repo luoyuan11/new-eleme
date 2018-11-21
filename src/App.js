@@ -9,12 +9,12 @@ import Home from './pages/Home/Home';
 import Discover from './pages/Discover/Discover';
 import Order from './pages/Order/Order';
 import Mine from './pages/Mine/Mine';
-
+import './styles/base.scss'
 
 class App extends Component {
   render() {
     return (
-      // <Provider store={store}>
+      <Provider store={store}>
         <Router>
           <Fragment>
             <Route path="/pages/Home/Home" exact component={Home} />
@@ -24,7 +24,7 @@ class App extends Component {
             <Footer />
           </Fragment>
         </Router>
-      // </Provider>
+       </Provider>
     )
   }
 }

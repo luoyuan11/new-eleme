@@ -1,0 +1,209 @@
+
+.All-Home{
+  background: #fff;
+  height: 100%;
+}
+
+
+.home-header{
+  background-image: linear-gradient(90deg,#0af,#0085ff);
+  padding: 2vw 3.733333vw;
+  .searchInput{
+    display: flex;
+    height: .96rem;
+    height: 9.6vw;
+    justify-content: center;
+    align-items: center;
+    border-radius: .026667rem;
+    border-radius: .266667vw;
+    background: #fff;
+    color: #999;
+    font-size: .373333rem;
+  }
+}
+.am-carousel-wrap-dot > span {
+  display: block;
+  width: 10px;
+  height: 4px;
+  margin: 0 3px;
+  background: #ccc;
+}
+.am-grid.am-grid-square .am-grid-item .am-grid-item-inner-content .am-grid-icon{
+  margin-top: 9px;
+  width: 40%!important;
+}
+.VIP-Coustom{
+  padding-bottom: 10px;
+  height: 40px;
+  width: 340px;
+  background-image: linear-gradient(90deg,#ffefc4,#f3dda0);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.666667vw 0 4vw;
+  color: #644f1b;
+  font-size: .293333rem;
+  margin-top: 10px;
+  flex-direction: row;
+  .VIP-Coustom-left img{
+    width: 20px;
+    height: 20px;
+  }
+  .superVIP{
+    font-size: 15px;
+    color: #644f1b;
+    font-weight: bold;
+    margin:0 5px;
+  }
+  .EveryMonth{
+    // line-height: 40px;
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: -4px;
+  }
+}
+.Home-banner{
+  margin-top: 10px;
+}
+.Recom_Shops{
+  // margin-bottom: 10px;
+  // display: flex;
+  // align-items: center;
+  // text-align: center;
+  // justify-content: center;
+  // position: relative;
+  h5{
+    // width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    font-size: 15px;
+    font-weight: normal;
+
+  }
+  h5:before{
+    // position: absolute;
+    margin-left: 3vw;
+    left: 10px;
+    display: block;
+    content: "";
+    width: 5.333333vw;
+    height: .266667vw;
+    background-color: #999;
+    margin-right:15px;
+  }
+  h5:after{
+    // position: absolute;
+    margin-right: 3.466667vw;
+    right: 10px;
+    display: block;
+    content: "";
+    width: 5.333333vw;
+    height: .266667vw;
+    background-color: #999;
+    margin-left:15px;
+
+  }
+  span{
+    display: block;
+    height: 36px;
+    line-height: 36px;
+    // text-align: center;
+  }
+}
+.recommand_list{
+  display: flex;
+  justify-content: space-around;
+  height: 40px;
+  align-items: center;
+  color: #666;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+  li{
+    height: 40px;
+    text-align: center;
+    // width: 25%;
+    line-height: 40px;
+
+  }
+}
+
+// 商家列表.
+.shops_list_head{
+  width: 100%;
+  height: 65px;
+  // background: pink;
+  box-sizing: border-box;
+  padding: 0 10px;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 5px;
+  .shops_list_left img{
+    width: 65px;
+    height: 65px;
+    margin-right: 5px;
+  }
+  .start_Mount{
+    display: flex;
+    justify-content: space-between;
+    // position: relative;
+    .stars{
+      flex: 1;
+      width: 200px;
+    }
+    .BirdPost{
+      color: #fff;
+      border: .133333vw solid #0097ff;
+      background-image: -webkit-linear-gradient(45deg,#0085ff,#0af);
+      background-image: linear-gradient(45deg,#0085ff,#0af);
+    }
+  }
+}
+.shops_list_foot{
+  width: 100%;
+  height: 71px;
+  // background: #ccc;
+  padding-left: 22.666667vw;
+  .shops_list_foot_Good{
+    width: 100%;
+    span{
+      color: rgb(102, 102, 102);
+      border-color: rgb(221, 221, 221);
+      border: .266667vw solid #ddd;
+      border-radius: .533333vw;
+      margin-right: 10px;
+      font-size: 10px;
+    }
+  }
+  .reduce_price{
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    text-align: center;
+    background: red;
+    color: white;
+    margin-right: 8px;
+    font-size: 10px;
+  }
+  .reduce_mount{
+    display: inline-block;
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    font-size: 12px;
+    color: rgb(102, 102, 102);
+  }
+}
+.total_shops_list P{
+  line-height: 18PX;
+}
