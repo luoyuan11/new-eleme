@@ -3,6 +3,8 @@ import { SearchBar, Grid, Carousel, WingBlank } from 'antd-mobile';
 import { NavLink } from 'react-router-dom';
 import './Home.scss';
 import Header from '../../components/Header';
+import Footer from '../../components/Footer'
+import { CSSTransition } from 'react-transition-group';
 const HomeUI = (props) => {
 
   const data = props.list.map((item, index) => ({
@@ -14,11 +16,13 @@ const HomeUI = (props) => {
     <div className='All-Home'>
       <div>
         <div className="elm-head" onClick={props.Search}>
-          <div className='elm-head-content'>
-            <i className='iconfont icon-dingwei'></i>
-            <span href="##">{props.position.city}</span>
-            <i className=' iconfont icon-drop-down'></i>
-          </div>
+          <div className='elm-head-content' onClick={props.toggle}>
+              <i className='iconfont icon-dingwei'></i>
+              <span href="##">{props.position.city}</span>
+              <i className=' iconfont icon-drop-down'></i>
+            </div>
+
+
         </div>
       </div>
       <div className='home-header'>
@@ -125,11 +129,24 @@ const HomeUI = (props) => {
           </ul>
         </div>
       </div>
-      <div id="position">
-          <div className='p_banner'>
-          这里是定位页
-          </div>
-      </div>
+      <CSSTransition
+      in={props.show}
+      timeout={100}
+      classNames="fade"
+      unmountOnExit
+      >
+        <div id="position">
+            <div className='p_banner'>
+               <div className="p_Header">
+                  <p></p>
+               </div>
+
+            </div>
+        </div>
+      </CSSTransition>
+
+
+      <Footer/>
     </div>
   )
 }

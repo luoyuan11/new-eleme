@@ -2,7 +2,9 @@
 import axios from 'axios';
 import { dispatch } from 'rxjs/internal/observable/pairs';
 
-import { AXIOS_INIT ,BANNER_LIST ,SHOPS_LIST ,LOCATION} from './actions'
+import { AXIOS_INIT ,BANNER_LIST ,SHOPS_LIST ,LOCATION, ONCLICK} from './actions'
+
+
 export const initLIstAsync=()=>{
   const api_proxy = 'https://bird.ioliu.cn/v1/?url=';
   return (dispatch,getStore)=>{
@@ -63,5 +65,11 @@ export const PositionAsync=()=>{
         city:res.data.result.ad_info.city
       })
     })
+  }
+}
+
+export const toggle=()=>{
+  return {
+    type:ONCLICK
   }
 }
