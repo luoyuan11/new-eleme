@@ -1,8 +1,5 @@
 import React, { Component ,Fragment} from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
-// import { Provider } from 'react-redux';
-// import store from './store'
-// import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home/Home';
 import Discover from './pages/Discover/Discover';
