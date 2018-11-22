@@ -10,7 +10,6 @@ import Discover from './pages/Discover/Discover';
 import Order from './pages/Order/Order';
 import Mine from './pages/Mine/Mine';
 
-
 class App extends Component {
   render() {
     return (
