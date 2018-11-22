@@ -12,7 +12,7 @@ const HomeUI = (props) => {
   console.log(props)
   return (
     <div className='All-Home'>
-      <div className={props.Search}>
+      <div>
         <div className="elm-head" onClick={props.Search}>
           <div className='elm-head-content'>
             <i className='iconfont icon-dingwei'></i>
@@ -33,7 +33,6 @@ const HomeUI = (props) => {
              <Grid data={data} isCarousel={true} infinite={true} dots={true} columnNum={5} />
             </WingBlank>
           </NavLink>
-
         </div>
         <div className='VIP-Coustom'>
           <div className='VIP-Coustom-left'>
