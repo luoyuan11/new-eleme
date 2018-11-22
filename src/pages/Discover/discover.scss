@@ -1,0 +1,162 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.elm-discover {
+  flex: 1;
+  background: #F5F5F5;
+  .discover_hd {
+    background: #fff;
+    position: relative;
+    margin-bottom: 14px;
+    li {
+      a {
+        display: flex;
+        justify-content: space-between;
+        width: 160px;
+        height: 80px;
+        align-items: center;
+        box-sizing: content-box;
+        margin-left: 185px;
+        padding: 0 15px;
+        border-bottom: 1px solid #ededed;
+        .list_left {
+          display: flex;
+          flex-direction: column;
+          .title {
+            font-size: 18px;
+            margin-bottom: 8px;
+          }
+          .title0 {
+            color: rgb(255, 153, 0);
+          }
+          .title1 {
+            color: rgb(27, 169, 225);
+          }
+          .title2 {
+            color: rgb(237, 102, 96);
+          }
+          .subtitle {
+            font-size: 13px;
+            color: #999;
+          }
+        }
+        img {
+          height: 45px;
+          width: 45px;
+        }
+      }
+    }
+    .findList0 {
+      a {
+        height: 132px;
+        padding: 23px 11px 6px 15px;
+        box-sizing: content-box;
+        border-right: 1px solid #ededed;
+        margin-left: 0;
+        align-items: flex-start;
+        position: absolute;
+        left: 0;
+        top: 0;
+        img {
+          width: 75px;
+          height: 75px;
+          position: absolute;
+          right: 11px;
+          bottom: 6px;
+        }
+      }
+    }
+  }
+  .discover_bd {
+    background: #FFF;
+    .goodsTitle {
+      text-align: center;
+      .line {
+        border-bottom: 1px solid #000;
+        width: 150px;
+        margin: 0 auto;
+        padding-top: 30px;
+      }
+      h2 {
+        font-size: 21px;
+        background: #FFF;
+        position: relative;
+        top: -13px;
+        width: 118px;
+        margin: 0 auto;
+        .icon-alarm {
+          color: #ff5339;
+          margin-right: 3px;
+          font-weight: normal;
+        }
+      }
+      p{
+        color: #999;
+        font-size: 13px;
+        line-height: 1;
+        margin-top: -8px;
+        padding-bottom: 16px;
+      }
+    }
+    .goodsList {
+      display: flex;
+      flex-wrap: wrap;
+      height: 160px;
+      box-sizing: content-box;
+      padding: 12px 0 15px 15px;
+      overflow: hidden;
+      li {
+        width: 111px;
+        margin-right: 6px;
+        margin-bottom: 20px;
+       a {
+        height: 160px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        img {
+          width: 100%;
+          margin-bottom: 9px;
+        }
+        .title {
+          font-size: 14px;
+          margin-bottom: 10px;
+          color: #000;
+        }
+        .points_required {
+          color: #ff5339;
+          font-size: 13px;
+          margin-right: 5px;
+        }
+        del {
+          font-size: 12px;
+          color: #999;
+        }
+        .corner_marker {
+          background: #413d3c;
+          color: #FFF;
+          font-size: 12px;
+          display: flex;
+          padding: 2px 4px;
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+       }
+      }
+      li:nth-of-type(3n){
+        margin-right: 0;
+      }
+    }
+  }
+  .more {
+    text-align: center;
+    padding-bottom: 16px;
+    .moreGoodsList {
+      color: #999;
+      font-size: 13px;
+    }
+  }
+}
