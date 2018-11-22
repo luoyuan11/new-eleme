@@ -1,0 +1,159 @@
+.elm-shopDetail {
+  flex: 1;
+  position: relative;
+  background: #FFF;
+  .elm-shopDetail_hd {
+    .bg_hd {
+      width: 100%;
+      height: 100px;
+    }
+    .bg_hd_mask {
+      width: 100%;
+      height: 100px;
+      background-image: linear-gradient(0deg,hsla(0,0%,100%,0),rgba(0,0,0,.5));
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+    .brandImg {
+      width: 75px;
+      height: 75px;
+      position: absolute;
+      left: 50%;
+      margin-left: -37.5px;
+      margin-top: 40px;
+    }
+  }
+  .hd_content {
+    margin-top: 30px;
+    text-align: center;
+    .shopName {
+      font-size: 23px;
+      margin-top: 20px;
+    }
+    .shopInfo {
+      margin: 10px 0;
+      span {
+        color: #666;
+        font-size: 12px;
+        margin-right: 8px;
+      }
+    }
+    .redPacket {
+      background: #fff4f4;
+      padding: 5px 10px 5px 20px;
+      width: 170px;
+      margin: 0 auto;
+      color: #5c1603;
+      line-height: 18px;
+      margin-bottom: 5px;
+      .money {
+        font-weight: 800;
+        color: #5c1603;
+        font-size: 18px;
+        margin-right: 8px;
+        margin-left: 5px;
+      }
+      .receive {
+        margin-left: 10px;
+      }
+    }
+    .activities {
+      display: flex;
+      width: 300px;
+      margin: 0 auto;
+      font-size: 12px;
+      align-items: center;
+      .activities_ul {
+        display: flex;
+        margin-right: 5px;
+        width: 240px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        .activities_content {
+          .activity_name {
+            display: inline-block;
+            background: rgb(240, 115, 115);
+            color: #FFF;
+            padding: 2px 5px;
+            margin-right: 5px;
+          }
+        }
+      }
+      .activity_discount {
+        color: #666;
+      }
+    }
+    .notice {
+      width: 310px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin: 10px auto;
+      color: #666;
+      font-size: 12px;
+    }
+  }
+  .shopDetail_main {
+    .shopRecommend {
+      .recommend_banner {
+        width: 343px;
+        margin: 10px 16px;
+      }
+      .recommendTitle {
+        font-size: 18px;
+        margin-left: 16px;
+        margin-bottom: 16px;
+      }
+      .recommendInfo {
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        li:first-child {
+          margin-left: 16px;
+
+        }
+        li {
+          margin-right: 10px;
+          width: 120px;
+          img {
+            width: 120px;
+          }
+          .foodName {
+            font-size: 17px;
+            margin: 7px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+          .foodSoleInfo {
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 5px;
+            span {
+              margin-right: 4px;
+            }
+          }
+          .addShopCar {
+            display: flex;
+            justify-content: space-between;
+            .price {
+              color: rgb(255, 83, 57);
+              font-size: 18px;
+            }
+            .addShopCar_add {
+              background: rgb(35, 149, 255);
+              width: 12px;
+              height: 12px;
+              border-radius: 50%;
+              color: #FFF;
+            }
+          }
+        }
+      }
+    }
+  }
+}

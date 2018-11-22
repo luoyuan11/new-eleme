@@ -16,6 +16,10 @@
     "react-scripts": "^2.1.1",
     "react-transition-group": "^2.5.0",
     "redux": "^4.0.1",
+<<<<<<< HEAD
+=======
+    "redux-logger": "^3.0.6",
+>>>>>>> feature/discover
     "redux-thunk": "^2.3.0",
     "styled-components": "^4.1.1"
   },
