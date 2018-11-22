@@ -2,12 +2,19 @@
 .All-Home{
   background: #fff;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
-
+.content{
+  flex: 1;
+}
 
 .home-header{
   background-image: linear-gradient(90deg,#0af,#0085ff);
   padding: 2vw 3.733333vw;
+  position: sticky;
+  top: 0;
+  z-index: 99;
   .searchInput{
     display: flex;
     height: .96rem;
@@ -126,20 +133,29 @@
   color: #666;
   text-align: center;
   border-bottom: 1px solid #ccc;
+  position: sticky;
+  top: 51px;
+  z-index: 999;
   li{
     height: 40px;
     text-align: center;
-    // width: 25%;
     line-height: 40px;
 
   }
 }
 
 // 商家列表.
+.shops_list li{
+  position: relative;
+  border-bottom: .133333vw solid #eee;
+  background-color: #fff;;
+  padding: 4vw 0;
+  list-style: none;
+  line-height: normal;
+}
 .shops_list_head{
   width: 100%;
-  height: 65px;
-  // background: pink;
+  height: 65px;;
   box-sizing: border-box;
   padding: 0 10px;
   display: flex;
@@ -153,7 +169,7 @@
   .start_Mount{
     display: flex;
     justify-content: space-between;
-    // position: relative;
+    color: #666;
     .stars{
       flex: 1;
       width: 200px;
@@ -170,6 +186,7 @@
   width: 100%;
   height: 71px;
   // background: #ccc;
+  color: #666;
   padding-left: 22.666667vw;
   .shops_list_foot_Good{
     width: 100%;
@@ -193,6 +210,17 @@
     margin-right: 8px;
     font-size: 10px;
   }
+  .new{
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    text-align: center;
+    background-color: rgb(112, 188, 70);
+    color: white;
+    margin-right: 8px;
+    font-size: 10px
+  }
   .reduce_mount{
     display: inline-block;
     flex: 1;
@@ -206,4 +234,53 @@
 }
 .total_shops_list P{
   line-height: 18PX;
+}
+.shops_list_right p{
+  color: #666;
+}
+#wrap[data-fixed="fixed"]{
+  position: fixed;
+  top:0;
+  left: 0;
+  margin: 0;
+  }
+.recommand_header_list{
+  position: sticky;
+  top: 35px;
+  z-index: 999;
+}
+.content-list{
+  overflow: hidden;
+  padding-bottom: 30px;
+}
+.elm-head{
+  display: flex;
+  justify-content: flex-start;
+  height: 35px;
+  line-height: 35px;
+  // width: 383px;
+  background-image: linear-gradient(90deg,#0af,#0085ff);
+  color: #fff;
+  padding: 2.666667vw 3.733333vw 0;
+
+}
+.p_banner{
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: #fff;
+  z-index: 9999;
+  position: fixed
+}
+.content-list{
+  height: 150px;
+  .slider-frame{
+    // overflow: visible !important;
+    height: 180px !important;
+    border: none
+  }
 }

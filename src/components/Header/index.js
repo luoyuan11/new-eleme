@@ -8,7 +8,7 @@ class Header extends Component {
      <div className="elm-head">
       <div className='elm-head-content'>
           <i className='iconfont icon-dingwei'></i>
-          <span href="##">未知地址</span>
+          <span href="##">{this.props.position}</span>
           <i className=' iconfont icon-drop-down'></i>
       </div>
      </div>

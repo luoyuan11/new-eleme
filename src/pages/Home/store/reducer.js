@@ -1,9 +1,13 @@
 
- import { AXIOS_INIT ,BANNER_LIST ,SHOPS_LIST} from './actions';
+ import { AXIOS_INIT ,BANNER_LIST ,SHOPS_LIST ,LOCATION} from './actions';
 const defaultState = {
   HomeList:[],
   bannerList:[],
   shopsList:[],
+  position:{
+    location:'',
+    city:'',
+  }
 }
 
 export default (state = defaultState,action) =>{
@@ -26,5 +30,14 @@ export default (state = defaultState,action) =>{
       newShopList.shopsList=action.data;
       return newShopList;
     }
-     return state;
+
+    if(action.type===LOCATION){
+      console.log(action.location)
+      let newposition =Object.assign({},state);
+      newposition.position.location=action.location;
+      newposition.position.city=action.city
+      console.log(newposition);
+      return newposition;
+    }
+    return state;
 }
