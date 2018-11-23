@@ -38,11 +38,11 @@ export default (state = defaultState,action) =>{
     }
 
     if(action.type===LOCATION){
-      console.log(action.location)
+      // console.log(action.location)
       let newposition =Object.assign({},state);
       newposition.position.location=action.location;
       newposition.position.city=action.city
-      console.log(newposition);
+      // console.log(newposition);
       return newposition;
     }
 
@@ -61,7 +61,7 @@ export default (state = defaultState,action) =>{
     }
 
     if(action.type===HOTSEARCH){
-      console.log(11111111111111111);
+      // console.log(11111111111111111);
       let newposition = Object.assign({},state);
       newposition.HomeShow=!newposition.HomeShow;
       return newposition;

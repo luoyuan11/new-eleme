@@ -5,6 +5,8 @@ import './Home.scss';
 // import Header from '../../components/Header';
 import Footer from '../../components/Footer'
 import { CSSTransition } from 'react-transition-group';
+import { StickyContainer, Sticky } from 'react-sticky';
+
 const HomeUI = (props) => {
 
   const data = props.list.map((item, index) => ({
@@ -19,7 +21,7 @@ const HomeUI = (props) => {
           <div className='elm-head-content' onClick={props.toggle}>
             <i className='iconfont icon-dingwei'></i>
             <span href="##">{props.position.city}</span>
-            <i className=' iconfont icon-drop-down'></i>
+            <i className='iconfont icon-plus-select-down'></i>
           </div>
 
         </div>
@@ -27,7 +29,6 @@ const HomeUI = (props) => {
       <div className='home-header' onClick={props.hotsearch} id={props.conentClassName=== true ? 'fiexed' : 'cancel'}>
         <SearchBar placeholder="搜索饿了么商家,商品名称" className="searchInput"  />
       </div>
-
 
       <div className='content'>
         <div className='content-list'>
@@ -39,7 +40,7 @@ const HomeUI = (props) => {
         </div>
         <div className='VIP-Coustom'>
           <div className='VIP-Coustom-left'>
-            <img src='https://fuss10.elemecdn.com/8/0e/4dd212d831becab6e3ebd484c0941jpeg.jpeg?imageMogr/format/webp/thumbnail/34x/' />
+            <img src='https://fuss10.elemecdn.com/8/0e/4dd212d831becab6e3ebd484c0941jpeg.jpeg?imageMogr/format/webp/thumbnail/34x/' alt='' />
             <span className='superVIP'>超级会员</span>
             <span className="EveryMonth"><b>.</b>每月领9元红包</span>
           </div>
@@ -80,13 +81,20 @@ const HomeUI = (props) => {
           </h5>
         </div>
         {/* t推荐导航 */}
-        <div id='recommand_header_list' id='list'>
-          <ul className='recommand_list'>
+        <StickyContainer>
+        <div id='recommand_header_list'>
+        <Sticky>
+        {({
+            style
+          }) => (
+            <ul className='recommand_list' style={{...style,'top':'51px','background':'#fff'}}>
             <li>综合排序 <i className='iconfont icon-plus-select-down'></i></li>
             <li>距离最近</li>
             <li>品质联盟</li>
             <li>筛选<i className='iconfont icon-shaixuan'></i></li>
           </ul>
+          )}
+        </Sticky>
         </div>
         {/* s商家列表 */}
         <div className='total_shops_list'>
@@ -98,7 +106,7 @@ const HomeUI = (props) => {
                     <li>
                     <div className='shops_list_head'>
                       <div className='shops_list_left'>
-                        <img src={`https://fuss10.elemecdn.com//${item.restaurant.image_path}`} />
+                        <img src={`https://fuss10.elemecdn.com//${item.restaurant.image_path}`}  alt=''/>
                       </div>
                       <div className='shops_list_right'>
                         <h4 className='foot_name'>{item.restaurant.name}</h4>
@@ -111,9 +119,9 @@ const HomeUI = (props) => {
 
                           <span className="BirdPost" style={{"background":`#${item.restaurant.delivery_mode && item.restaurant.delivery_mode.color }` || '#fff'}}>{item.restaurant.delivery_mode && item.restaurant.delivery_mode.text}</span>
                         </p>
-                        <p>
-                          <span>￥20元起送 | 远距离免费配送</span>
-                          <span>{item.restaurant.distance / 1000}km | {item.restaurant.order_lead_time}分钟</span>
+                        <p className='posst'>
+                          <span className='postMoney'>￥15元起送 | 免费配送</span>
+                          <span className='postDistance'>{item.restaurant.distance / 1000}km | {item.restaurant.order_lead_time}分钟</span>
                         </p>
                       </div>
                     </div>
@@ -138,7 +146,8 @@ const HomeUI = (props) => {
             }
           </ul>
         </div>
-      </div>
+        </StickyContainer>
+     </div>
       <Footer />
       <CSSTransition
         in={props.show}
@@ -154,7 +163,7 @@ const HomeUI = (props) => {
               <span>新增地址</span>
             </div>
             <div className='location_search'>
-              <span>{props.position.city}<i className=' iconfont icon-drop-down'></i></span>
+              <span>{props.position.city}<i className='iconfont icon-plus-select-down'></i></span>
               <SearchBar placeholder="请输入地址" className="searchInput" />
             </div>
             <div className='currentAddress'>

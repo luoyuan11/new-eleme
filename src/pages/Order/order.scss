@@ -6,14 +6,13 @@ header {
   line-height: 44px;
   padding-top: 6px;
   p {
-    margin-top: -48px;
+    margin-top: -50px;
     text-align: center;
     font-size: 18px;
   }
 }
 .order {
   flex: 1;
-  // z-index: 5;
   .goodsList {
     li {
       background: #fff;
