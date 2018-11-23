@@ -1,6 +1,7 @@
 import React,{Component,Fragment} from 'react';
 import { HashRouter as Router } from 'react-router-dom';
 import { NavLink,Link} from 'react-router-dom';
+import Footer from '../../components/Footer'
 // import Login from './Login/Login'
 // import Register from './Register/Register'
 import './Mine.scss'
@@ -63,6 +64,7 @@ class Mine extends Component {
               <span><i className=' iconfont icon-changyonglogo41'></i></span>
               <Link className="downloadApp" to=''>下载饿了么App</Link>
             </div>
+            <Footer/>
         </Fragment>
       </Router>
 
