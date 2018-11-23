@@ -2,13 +2,15 @@ import React, { Fragment } from 'react';
 import './order.scss';
 import Footer from '../../components/Footer';
 import { Icon } from 'antd-mobile';
+import { Link } from 'react-router-dom';
 
 const OrderUI = (props) => {
-  console.log(props)
   return (
     <Fragment>
       <header>
-        <Icon type="left" color="#fff" />
+        <div className="goback" onClick={props.history.goBack}>
+          <Icon type="left" color="#fff" />
+        </div>
         <p>订单</p>
       </header>
       <div className="order" style={{ display: `${props.userID.aaa}` }}>
@@ -42,7 +44,9 @@ const OrderUI = (props) => {
         <section>
           <img src="https://fuss10.elemecdn.com/d/60/70008646170d1f654e926a2aaa3afpng.png" alt=""/>
           <h3>登录后查看订单</h3>
-          <button>点击登录</button>
+          <Link to="/pages/Mine/Mine">
+            <button>点击登录</button>
+          </Link>
         </section>
       </div>
       <Footer/>

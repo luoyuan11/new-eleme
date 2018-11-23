@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import cookie from 'react-cookies';
 import OrderUI from './OrderUI';
 import { initListAsync, haveCookid } from './store/actions';
 import { connect } from 'react-redux';
@@ -27,7 +26,6 @@ const mapStateToProps = ({ Order }) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-
   }
 }
 

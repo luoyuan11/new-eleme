@@ -18,12 +18,11 @@ export const initListAsync = () => {
     axios.get('/apigoods/goods.json')
       .then(res => {
         const reg = /png$/;
-        const arr = [];
         res.data.map((item, index) => {
           if (reg.test(item.restaurant_image_hash)) {
-            item.restaurant_image_hash += '.png';
+            return item.restaurant_image_hash += '.png';
           } else {
-            item.restaurant_image_hash += '.jpeg';
+           return item.restaurant_image_hash += '.jpeg';
           }
         })
         dispatch(initList(res.data));
