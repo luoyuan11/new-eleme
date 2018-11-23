@@ -1,5 +1,5 @@
 
- import { AXIOS_INIT ,BANNER_LIST ,SHOPS_LIST ,LOCATION,ONCLICK} from './actions';
+ import { AXIOS_INIT ,BANNER_LIST ,SHOPS_LIST ,LOCATION,ONCLICK ,ROWCLICK ,HOTSEARCH } from './actions';
 const defaultState = {
   HomeList:[],
   bannerList:[],
@@ -9,7 +9,9 @@ const defaultState = {
     city:'',
 
   },
-  show:false
+  HotSearchList:[],
+  show:false,
+  HomeShow:false,
 }
 
 export default (state = defaultState,action) =>{
@@ -45,6 +47,19 @@ export default (state = defaultState,action) =>{
     if(action.type===ONCLICK){
       let newposition =Object.assign({},state);
       newposition.show=!newposition.show
+      return newposition;
+    }
+
+    if(action.type===ROWCLICK){
+      let newposition =Object.assign({},state);
+      newposition.HotSearchList=action.HotSearchList;
+      return newposition;
+    }
+
+    if(action.type===HOTSEARCH){
+      console.log(11111111111111111);
+      let newposition = Object.assign({},state);
+      newposition.HomeShow=!newposition.HomeShow;
       return newposition;
     }
     return state;

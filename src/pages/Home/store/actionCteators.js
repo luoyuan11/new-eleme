@@ -2,7 +2,7 @@
 import axios from 'axios';
 import { dispatch } from 'rxjs/internal/observable/pairs';
 
-import { AXIOS_INIT ,BANNER_LIST ,SHOPS_LIST ,LOCATION, ONCLICK} from './actions'
+import { AXIOS_INIT ,BANNER_LIST ,SHOPS_LIST ,LOCATION, ONCLICK,ROWCLICK ,HOTSEARCH} from './actions'
 
 
 export const initLIstAsync=()=>{
@@ -71,5 +71,26 @@ export const PositionAsync=()=>{
 export const toggle=()=>{
   return {
     type:ONCLICK
+  }
+}
+
+export const hotsearch=()=>{
+  return{
+    type:HOTSEARCH
+  }
+}
+export const RowClick=()=>{
+  const api_proxy = 'https://bird.ioliu.cn/v1/?url=';
+  return(dispatch,getStore)=>{
+
+    axios.get(api_proxy+'https://h5.ele.me/restapi/shopping/v3/hot_search_words?latitude=25.44344&longitude=119.01042')
+    .then(res=>{
+      console.log(res);
+      dispatch({
+        type:ROWCLICK,
+         HotSearchList:res.data
+      })
+    })
+
   }
 }

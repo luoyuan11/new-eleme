@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { initLIstAsync, bannerIstAsync, shopsIstAsync, PositionAsync ,toggle} from './store/actionCteators'
+import { initLIstAsync, bannerIstAsync, shopsIstAsync, PositionAsync ,toggle ,RowClick ,hotsearch} from './store/actionCteators'
 import HomeUI from './HomeUI.js';
 import { connect } from 'react-redux';
 import store from '../../store/index';
@@ -34,6 +34,7 @@ class Home extends Component {
     store.dispatch(bannerIstAsync())
     store.dispatch(shopsIstAsync());
     store.dispatch(PositionAsync());
+    store.dispatch(RowClick());
   }
 }
 
@@ -44,6 +45,8 @@ const mapStateToProps = ({ Home }) => {
     shopslist: Home.shopsList,
     position: Home.position,
     show:Home.show,
+    HomeShow:Home.HomeShow,
+    HotSearchList:Home.HotSearchList
   }
 };
 
@@ -51,6 +54,9 @@ const mapDispatchToProps = (dispatch)=>{
   return{
     toggle:()=>{
       dispatch(toggle())
+    },
+    hotsearch:()=>{
+      dispatch(hotsearch())
     }
   }
 };
