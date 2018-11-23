@@ -10,7 +10,7 @@ class ShopDetail extends Component {
   }
   componentDidMount() {
     store.dispatch(getFoodInfoAsync());
-    // store.dispatch(getShopInfoAsync());
+    store.dispatch(getShopInfoAsync());
   }
 }
 
@@ -27,18 +27,24 @@ const mapStateToProps = ({ShopDetail}) => {
     promotion_info: ShopDetail.promotion_info,
     recommendTitle: ShopDetail.recommendTitle,
     recommendInfo: ShopDetail.recommendInfo,
-
-
-
-    initList: ShopDetail.initList,
-    bought_list: ShopDetail.bought_list,
+    order_lead_time: ShopDetail.order_lead_time,
     menu: ShopDetail.menu,
-    recommend: ShopDetail.recommend,
-    redpack: ShopDetail.redpack,
-    rst: ShopDetail.rst,
-    user: ShopDetail.user,
+    list_left_name: ShopDetail.list_left_name,
     tabs: ShopDetail.tabs,
     recommend_banner: ShopDetail.recommend_banner,
+    storyBrief: ShopDetail.storyBrief,
+    storyImg: ShopDetail.storyImg,
+    storyTitle: ShopDetail.storyTitle,
+    delivery_people: ShopDetail.delivery_people,
+    distance: ShopDetail.distance,
+    delivery_fee: ShopDetail.delivery_fee,
+    activities_pei: ShopDetail.activities_pei,
+    albums: ShopDetail.albums,
+    description: ShopDetail.description,
+    flavors: ShopDetail.flavors,
+    phone: ShopDetail.phone,
+    address: ShopDetail.address,
+    opening_hours: ShopDetail.opening_hours
   }
 };
 const mapDisPatchToProps = (dispatch) => {
@@ -50,6 +56,7 @@ const mapDisPatchToProps = (dispatch) => {
         return 'https://fuss10.elemecdn.com/'+ imgurl + '.jpeg';
       }
     },
+
   }
 };
 export default connect(mapStateToProps, mapDisPatchToProps)(ShopDetail);

@@ -108,10 +108,12 @@
         margin-left: 16px;
         margin-bottom: 16px;
       }
+      .recommendInfo::-webkit-scrollbar{
+        display: none;
+      }
       .recommendInfo {
         display: flex;
         overflow-x: auto;
-        overflow-y: hidden;
         li:first-child {
           margin-left: 16px;
 
@@ -140,19 +142,215 @@
           .addShopCar {
             display: flex;
             justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
             .price {
               color: rgb(255, 83, 57);
               font-size: 18px;
             }
             .addShopCar_add {
               background: rgb(35, 149, 255);
-              width: 12px;
-              height: 12px;
+              width: 24px;
+              height: 24px;
+              text-align: center;
               border-radius: 50%;
               color: #FFF;
+              font-size: 20px;
+              margin-right: 5px;
             }
           }
         }
+      }
+      .foodInfo {
+        margin-top: 10px;
+        height: 667px;
+        .food_type {
+          padding-left: 10px;
+          padding-right: 10px;
+          width: 275px;
+          // overflow: hidden;
+          .title {
+            padding: 10px 0;
+            .titleName {
+              font-size: 13px;
+              color: #000;
+              font-weight: 800;
+              margin-right: 5px;
+            }
+            .titleDescription {
+              font-size: 12px;
+              color: #666;
+            }
+          }
+          li {
+            position: relative;
+            display: flex;
+            margin-bottom: 20px;
+            width: 230px;
+            justify-content: space-between;
+            img {
+              width: 95px;
+              height: 95px;
+              margin-right: 15px;
+            }
+            .foodName {
+              font-size: 16px;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              margin-bottom: 10px;
+            }
+            .foodDescription {
+              color: #999;
+              font-size: 12px;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              margin-bottom: 6px;
+            }
+            .foodSoleInfo {
+              color: #999;
+              font-size: 12px;
+              span {
+                margin-right: 6px;
+              }
+            }
+            .foodPrice {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              margin-top: 10px;
+              width: 140px;
+              .price {
+                color: rgb(255, 83, 57);
+                font-size: 18px;
+              }
+              .add {
+                font-size: 20px;
+                color: #FFF;
+                background: rgb(35, 149, 255);
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+    }
+    .shopStore {
+      background: #f8f8f8;
+      h4 {
+        font-size: 15px;
+        font-weight: 800;
+        margin-bottom: 15px;
+      }
+      .shop_story {
+        background: #FFF;
+        padding: 15px;
+        margin-bottom: 15px;
+        img {
+          width: 100%;
+          margin-bottom: 20px;
+        }
+        .storyTitle {
+          font-size: 15px;
+          font-weight: 800;
+          margin-bottom: 5px;
+        }
+        .storyBrief {
+          color: #666;
+          font-size: 13px;
+          height: 36px;
+          line-height: 18px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          margin-bottom: 30px;
+        }
+        .brandStory {
+          color: #666;
+          display: flex;
+          justify-content: center;
+        }
+      }
+      .deliveryInfo {
+        background: #FFF;
+        padding: 20px 15px;
+        margin-bottom: 15px;
+        span {
+          color: #666;
+          line-height: 1.4;
+        }
+        .delivery_fee {
+          color: #666;
+          line-height: 1.4;
+          margin-top: 5px;
+        }
+      }
+      .activity {
+        background: #FFF;
+        padding: 20px 15px;
+        margin-bottom: 15px;
+      }
+      li {
+        margin-bottom: 15px;
+        font-size: 13px;
+        color: #666;
+        .icon_name {
+          color: #FFF;
+          margin-right: 6px;
+          padding: 3px;
+        }
+
+      }
+      .albums {
+        background: #FFF;
+        padding: 20px 15px 10px;
+        margin-bottom: 15px;
+        ul {
+          display: flex;
+          li {
+            margin-right: 10px;
+            font-size: 13px;
+            img {
+              width: 78px;
+              height: 78px;
+              margin-bottom: 5px;
+            }
+          }
+        }
+      }
+      .shopStoreInfo {
+        background: #FFF;
+        padding: 20px 15px 0;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #f8f8f8;
+        p{
+          color: #666;
+          font-size: 13px;
+          line-height: 1.6;
+        }
+        li {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-top: 1px solid #ddd;
+          height: 50px;
+          margin-bottom: 0;
+          span {
+            font-weight: 800;
+            font-size: 13px;
+            color: #333;
+          }
+        }
+      }
+      .qualifications {
+        background: #FFF;
+        padding: 20px 15px 0;
+        margin-bottom: 15px;
       }
     }
   }
