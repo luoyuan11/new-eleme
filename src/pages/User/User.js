@@ -1,5 +1,5 @@
 import React,{Component,Fragment} from 'react';
-import { HashRouter as Router, Route} from 'react-router-dom';
+import { HashRouter as Router, Route,Redirect} from 'react-router-dom';
 import LoginForm from './Longin/Login'
 import Register from './Register/Register'
 class User extends Component {
@@ -9,7 +9,7 @@ class User extends Component {
         <Fragment>
             <Route path='/pages/Login'  component={LoginForm}/>
             <Route path='/pages/Register'  component={Register}/>
-            <Route path="/pages/User" component={LoginForm}/>
+            <Redirect from='/pages/User' to='/pages/Login'></Redirect>
         </Fragment>
       </Router>
 

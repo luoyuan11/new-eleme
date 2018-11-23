@@ -21,7 +21,7 @@ app.post('/login', function (req, res) {
 	var body = '';
 
 	var client = mysql.createConnection({
-		host     : '10.36.134.18',
+		host     : 'localhost',
 		user     : 'root',
 		password : '',
 		database : 'react'

@@ -1,15 +1,23 @@
-// import React,{Component, Fragment} from "react"
+
  import "./Login.scss"
  import "./Login.css"
  import axios from 'axios'
 import React,{Component,Fragment} from 'react'
 import { NavLink,Link} from 'react-router-dom';
+import Cookie from 'react-cookies'
 
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 
 const FormItem = Form.Item;
 
 class Login extends Component {
+  // constructor(props){
+  //   super(props);
+  //   const{cookies}=props;
+  //   this.state={
+  //     phoneNume:
+  //   }
+  // }
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
@@ -23,16 +31,14 @@ class Login extends Component {
 
     var phoneNum=values.phoneNum
     var password=values.password
-    var repassword=values.repassword
     console.log(phoneNum,'即将登录')
-    if(repassword===password){
-      console.log(123)
-    }
   axios.post('http://localhost:3030/login',{phoneNum,password})
   .then(res=>{
       if(res.status===200&&res.data.code===0){
         console.log('成功')
-        this.props.history.push('/Login')
+        console.log(phoneNum)
+        Cookie.save('userId', phoneNum)
+        this.props.history.push('/pages/Mine/Mine')
       }else if(res.status===404){
         // this.props.history.push('/Regiser')
         console.log('失败')
@@ -45,7 +51,9 @@ class Login extends Component {
     const {getFieldDecorator}  = this.props.form;
     return (
       <Fragment>
-          <div className='eleme_logo'></div>
+          <div className='eleme_logo'>
+              <img src="/src/images/eleme.png" alt=""/>
+          </div>
           <Form onSubmit={this.handleSubmit} className="login-form">
             <FormItem>
               {getFieldDecorator('phoneNum', {

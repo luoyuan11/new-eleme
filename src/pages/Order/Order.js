@@ -1,32 +1,34 @@
 import React, { Component } from 'react';
+import cookie from 'react-cookies';
 import OrderUI from './OrderUI';
-import { initListAsync } from './store/actions';
-import store from './store/index';
+import { initListAsync, haveCookid } from './store/actions';
+import { connect } from 'react-redux';
+import store from '../../store/index';
 
 class Order extends Component {
-  constructor(props) {
-    super(props);
-    this.state = store.getState();
-    store.subscribe(() => {
-      this.setState(store.getState());
-      console.log(this.state)
-    })
-  }
   render() {
     return (
-      <OrderUI
-        list={this.state.list}
-        />
+      <OrderUI {...this.props}/>
     )
   }
 
   componentDidMount() {
+    store.dispatch(haveCookid());
     store.dispatch(initListAsync());
-    setTimeout(() => {
-      console.log(this.state)
-    },1000);
   }
-
 }
 
-export default Order;
+const mapStateToProps = ({ Order }) => {
+  return {
+    list: Order.list,
+    userID: Order.userID,
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Order);

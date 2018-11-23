@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
-import { initLIstAsync, bannerIstAsync, shopsIstAsync, PositionAsync } from './store/actionCteators'
+import { initLIstAsync, bannerIstAsync, shopsIstAsync, PositionAsync ,toggle ,RowClick ,hotsearch,windowOnScroll ,Header} from './store/actionCteators'
 import HomeUI from './HomeUI.js';
 import { connect } from 'react-redux';
 import store from '../../store/index';
+// import { SearchBar, Grid, Carousel, WingBlank } from 'antd-mobile';
+// import { NavLink } from 'react-router-dom';
+import './Home.scss';
+// import Header from '../../components/Header';
+// import Footer from '../../components/Footer'
+
+
 class Home extends Component {
 
   render() {
@@ -15,6 +22,17 @@ class Home extends Component {
     store.dispatch(bannerIstAsync())
     store.dispatch(shopsIstAsync());
     store.dispatch(PositionAsync());
+    store.dispatch(RowClick());
+
+    window.addEventListener('scroll',function(){
+      var h=this.window.scrollY;
+      if(h>35){
+        store.dispatch(windowOnScroll());
+      }else{
+        store.dispatch(Header())
+      }
+  })
+
   }
 }
 
@@ -24,22 +42,25 @@ const mapStateToProps = ({ Home }) => {
     bannerlist: Home.bannerList,
     shopslist: Home.shopsList,
     position: Home.position,
+    show:Home.show,
+    HomeShow:Home.HomeShow,
+    HotSearchList:Home.HotSearchList,
+    conentClassName:Home.conentClassName
   }
 };
 
 const mapDispatchToProps = (dispatch)=>{
   return{
-    Search:()=>{
-      console.log(11111);
-      var obj=document.getElementById("position");
-      obj.style.display='block';
-      obj.setAttribute('className','p_banner')
-      console.log(obj);
-
+    toggle:()=>{
+      dispatch(toggle())
     },
-    positions:()=>{
-      console.log('这里是定位');
+    hotsearch:()=>{
+      dispatch(hotsearch())
+    },
+    windowOnScroll:()=>{
+      dispatch(windowOnScroll());
     }
+
   }
 };
 

@@ -113,12 +113,12 @@ class Detail extends Component {
                 <span>￥20元起送 | 远距离免费配送</span>
                 <span>{obj.restaurant.distance/1000}km | {obj.restaurant.order_lead_time}分钟</span>
               </p>
-              <div className='shops_list_foot'>
-                  <p className='shops_list_foot_Good'>
+              <div>
+                  <p style={{ marginBottom: '5px' }}>
                     <span style={{ border: '1px solid rgb(221, 221, 221)', marginRight: '5px' }}>{obj.restaurant.support_tags[0].text }</span>
                      <span style={{ border: '1px solid rgb(221, 221, 221)' }}>{obj.restaurant.support_tags[1] && obj.restaurant.support_tags[1].text}</span>
                   </p>
-                  <p>
+                  <p style={{ marginBottom: '5px' }}>
                     <span style={{ background: 'rgb(240, 115, 115)', marginRight: '10px', padding: '0 3px', color: '#fff' }}>{obj.foods[0].activities[0].icon_name}</span>
                     <span className='reduce-mount'>{obj.foods[0].activities[0].description}</span>
                   </p>
@@ -134,7 +134,7 @@ class Detail extends Component {
     };
     return (
       <Fragment>
-        <WhiteSpace />
+        {/* <WhiteSpace /> */}
         <Tabs tabs={tabs} renderTabBar={props => <Tabs.DefaultTabBar {...props} page={4} />}>
         <Link to="/shopDetail">
         <ListView

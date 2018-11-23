@@ -1,18 +1,24 @@
 .elm-foot {
+  width: 100%;
   display: flex;
   height: 50px;
   background: #FFF;
   border-top: 1px solid #000;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
   li {
-    flex: 1;
+    height: 50px;
+    line-height: 50px;
     display: flex;
-    a {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
+    // a {
+    //   flex: 1;
+    //   display: flex;
+    //   flex-direction: column;
+    //   justify-content: center;
+    //   align-items: center;
+    // }
     .active {
       color: green;
     }
