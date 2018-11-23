@@ -4,12 +4,13 @@ import { NavLink,Link} from 'react-router-dom';
 import Footer from '../../components/Footer'
 import './Mine.scss'
 const MineUI = (props)=>{
+  console.log(props)
   return(
     <Router>
         <Fragment>
             <div className="user">
               <div className="mine">{props.header}</div>
-              <NavLink to='/pages/User'>
+              <Link className='User_p' to={{pathname:`${props.path}`}}>
                   <div className="uesrTou">
                     <img src="" alt=""/>
                   </div>
@@ -18,7 +19,7 @@ const MineUI = (props)=>{
                     <p><i className=' iconfont icon-shouji-copy'></i><span>登录后享受更多特权</span></p>
                   </div>
                   <span className='more'>&gt;</span>
-              </NavLink>
+              </Link>
             </div>
             <div className='user_money'>
                   <ul className='userMoneyList'>

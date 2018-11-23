@@ -32,7 +32,7 @@ class Login extends Component {
     var phoneNum=values.phoneNum
     var password=values.password
     console.log(phoneNum,'即将登录')
-  axios.post('http://localhost:3030/login',{phoneNum,password})
+  axios.post('http://localhost:4000/login',{phoneNum,password})
   .then(res=>{
       if(res.status===200&&res.data.code===0){
         console.log('成功')

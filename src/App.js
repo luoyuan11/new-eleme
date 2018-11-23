@@ -6,7 +6,7 @@ import Home from './pages/Home/Home';
 import Discover from './pages/Discover/Discover';
 import Order from './pages/Order/Order';
 import Mine from './pages/Mine/Mine';
-
+import userInfo from './pages/Mine/userInfo/userInfo';
 import User from './pages/User/User';
 import Login from './pages/User/Longin/Login';
 import Register from './pages/User/Register/Register';
@@ -28,7 +28,7 @@ class App extends Component {
             <Route path="/pages/Discover/Discover"  component={Discover} />
             <Route path="/pages/Order/Order"  component={Order} />
             <Route path="/pages/Mine/Mine"  component={Mine} />
-
+            <Route path="/pages/userInfo"  component={userInfo} />
             <Route path="/pages/User"  component={User} />
             <Route path="/pages/Login"  component={Login} />
             <Route path="/pages/Register"  component={Register} />

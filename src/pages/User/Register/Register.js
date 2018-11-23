@@ -30,7 +30,7 @@ class Register extends Component {
         var repassword=values.repassword
     console.log(phoneNum,'即将注册')
     if(password ===repassword){
-      axios.post('http://localhost:3030/register',{phoneNum,password})
+      axios.post('http://localhost:4000/register',{phoneNum,password})
       .then(res=>{
           if(res.status===200){
               if(res.data.code===0){

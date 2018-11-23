@@ -8,6 +8,7 @@ import UserReducer from '../pages/User/store/reducer';
 import ShopDetailReducer from '../pages/ShopDetail/store/reducer';
 import LoginReducer from '../pages/User/Longin/store/reducer';
 import RegisterReducer from '../pages/User/Register/store/reducer';
+import userInfoReducer from '../pages/Mine/userInfo/store/reducer';
 
 let zongdeReducers = combineReducers(
   {
@@ -18,7 +19,8 @@ let zongdeReducers = combineReducers(
   User:UserReducer,
   ShopDetail: ShopDetailReducer,
   Login:LoginReducer,
-  Register:RegisterReducer
+  Register:RegisterReducer,
+  userInfo:userInfoReducer
 })
 
 // console.log(zongdeReducers);
