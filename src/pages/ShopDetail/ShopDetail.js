@@ -27,9 +27,6 @@ const mapStateToProps = ({ShopDetail}) => {
     promotion_info: ShopDetail.promotion_info,
     recommendTitle: ShopDetail.recommendTitle,
     recommendInfo: ShopDetail.recommendInfo,
-
-
-
     initList: ShopDetail.initList,
     bought_list: ShopDetail.bought_list,
     menu: ShopDetail.menu,

@@ -24,7 +24,6 @@ const mapStateToProps = ({Discover}) => {
   }
 }
 
-
 const mapDispatchToProps = null;
 
 export default connect(mapStateToProps, mapDispatchToProps)(Discover);
