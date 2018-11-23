@@ -42,7 +42,7 @@ export const haveCookid = () => {
   return (dispatch, getState) => {
     let aaa = '';
     let bbb = '';
-    if (cookie.load('userID') !== undefined && cookie.load('userID') !== '') {
+    if (cookie.load('userId') !== undefined && cookie.load('userId') !== '') {
       aaa = 'block';
       bbb = 'none';
     } else {
