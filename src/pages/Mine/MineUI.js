@@ -8,6 +8,7 @@ const MineUI = (props)=>{
     <Router>
         <Fragment>
             <div className="user">
+              <div className="mine">{props.header}</div>
               <NavLink to='/pages/User'>
                   <div className="uesrTou">
                     <img src="" alt=""/>
@@ -58,7 +59,7 @@ const MineUI = (props)=>{
               <Link className="my_service " to=''>客户服务</Link>
             </div>
             <div className="download List_shing">
-              <span><i className=' iconfont icon-changyonglogo41'></i></span>
+              <span><i className=' iconfont icon-changyonglogo41' style={{fontSize:'20px'}}></i></span>
               <Link className="downloadApp" to=''>下载饿了么App</Link>
             </div>
             <Footer/>

@@ -6,6 +6,7 @@ import MineUI from './MineUI'
 const mapStateToProps=({Mine})=>{
   return {
     title:Mine.title,
+    header:Mine.header
   }
 };
 const mapDispatchToProps =null

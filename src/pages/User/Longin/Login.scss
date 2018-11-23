@@ -2,20 +2,13 @@
 
 .eleme_logo{
   height: 50px;
-  width: 150px;
-  background: #eee;
-  background: url('https://web-ubt.ele.me/collect/log') no-repeat center;
+  width: 100px;
+  margin: 40px auto;
 }
-// .login-form{
-//   width: 100%;
-//   .ant-form-item-children{
-//     width: 70%;
-//     border: 1px solid #000;
-//   }
 // }
 .ant-row{
   width: 80%;
-  margin: 30px auto;
+  margin: 20px auto;
 }
 .antd-input{
   height: 300px;
@@ -52,6 +45,9 @@
     border-radius: 5px;
     margin-left:60px;
   }
+}
+.icon-changyonglogo41 {
+  font-size: 50px;
 }
 #username,#password{
   height: 30px;;

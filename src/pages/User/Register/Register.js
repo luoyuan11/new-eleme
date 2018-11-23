@@ -60,7 +60,7 @@ class Register extends Component {
    const {getFieldDecorator}  = this.props.form;
    return (
      <Fragment>
-         <div className='eleme_logo'></div>
+         <div className='eleme_logo'><i className='iconfont icon-changyonglogo41 ' ></i></div>
          <Form onSubmit={this.handleSubmit} className="login-form">
            <FormItem>
              {getFieldDecorator('phoneNum', {
@@ -94,9 +94,9 @@ class Register extends Component {
              )}
              <Link className="login-form-forgot" to="./Register" style={{width:'50%'}}>Forgot password</Link>
              <Button type="primary" htmlType="submit" className="login-form-button" style={{width:'100%'}}>
-               Register in
+               注册
              </Button>
-             Or <Link to="/pages/Login" style={{width:'80%'}}>Login now!</Link>
+             或 <Link to="/pages/Login" style={{width:'80%'}}>直接登录!</Link>
            </FormItem>
          </Form>
 
