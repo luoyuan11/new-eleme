@@ -37,6 +37,7 @@ class App extends Component {
             <Route path="/pages/Home/Detail" component={Detail} />
 
             <Route path="/pages/Location/location" component={location}/>
+            <Route path="" exact component={Home} />
           </Fragment>
         </Router>
       </Provider>

@@ -1,13 +1,19 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../../components/Header/index';
+import Footer from '../../components/Footer/index';
 import './discover.scss';
+import { NavBar, Icon } from 'antd-mobile';
 
 
 const DiscoverUI = (props) => {
   return (
     <Fragment>
-      <Header title={props.title}/>
+      <NavBar
+        mode="dark"
+        icon={<Icon type="left" />}
+      >
+      发现
+      </NavBar>
       <div className="elm-discover">
         {/* discover 上半部分 */}
         <ul className="discover_hd">
@@ -64,6 +70,7 @@ const DiscoverUI = (props) => {
           </p>
         </div>
       </div>
+      <Footer />
     </Fragment>
   )
 }

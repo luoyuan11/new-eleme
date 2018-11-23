@@ -1,9 +1,10 @@
 import React, { Component,Fragment } from 'react';
 import { ListView, Tabs, WhiteSpace } from 'antd-mobile';
 import axios from 'axios';
-import store from './store/index';
 import { Link } from 'react-router-dom';
-const NUM_ROWS = 8;
+import { Icon } from 'antd-mobile';
+import { connect } from 'react-redux';
+const NUM_ROWS = 20;
 let pageIndex = 0;
 
 function genData(pIndex = 0) {
@@ -42,7 +43,7 @@ class Detail extends Component {
               item.restaurant.image_path += '.jpeg';
             }
             // arr.push(item.restaurant);
-            arr.push(item);
+            return arr.push(item);
           })
           this.rData = genData();
           this.setState({
@@ -101,10 +102,10 @@ class Detail extends Component {
       const obj = this.state.list[index--];
       return (
         <div key={rowID} style={{ padding: '0 15px' }}>
-          <div style={{ display: '-webkit-box', display: 'flex', padding: '15px 0' }}>
+          <div style={{ display: 'flex', padding: '15px 0' }}>
             <img style={{ height: '65px', marginRight: '15px' }} src={`https://fuss10.elemecdn.com/${obj.restaurant.image_path}`} alt="" />
             <div style={{ lineHeight: 1, color: '#666', fontSize: '12px' }}>
-              <div style={{ marginBottom: '8px', fontSize: '20px' }}>{obj.restaurant.name}</div>
+              <div style={{ marginBottom: '5px', fontSize: '15px', color:'#000'}}>{obj.restaurant.name}</div>
               <p>
                 <span style={{ color:'yellow' }}> ★★★★★ </span>
                 <span>{obj.restaurant.delivery_mode && obj.restaurant.delivery_mode.text}</span>
@@ -119,8 +120,8 @@ class Detail extends Component {
                      <span style={{ border: '1px solid rgb(221, 221, 221)' }}>{obj.restaurant.support_tags[1] && obj.restaurant.support_tags[1].text}</span>
                   </p>
                   <p style={{ marginBottom: '5px' }}>
-                    <span style={{ background: 'rgb(240, 115, 115)', marginRight: '10px', padding: '0 3px', color: '#fff' }}>{obj.foods[0].activities[0].icon_name}</span>
-                    <span className='reduce-mount'>{obj.foods[0].activities[0].description}</span>
+                    {/* <span style={{ background: 'rgb(240, 115, 115)', marginRight: '10px', padding: '0 3px', color: '#fff' }}>{obj.foods && obj.foods[0].activities[0].icon_name}</span> */}
+                    {/* <span className='reduce-mount'>{obj.foods[0].activities[0].description}</span> */}
                   </p>
                   <p>
                     <span style={{ marginRight: '10px', background: 'rgb(153, 153, 153)', color: '#fff', padding: '0 3px' }}>{obj.restaurant.supports[0] && obj.restaurant.supports[0].icon_name}</span>
@@ -134,6 +135,12 @@ class Detail extends Component {
     };
     return (
       <Fragment>
+        <header>
+          <div onClick={this.props.history.goBack}>
+            <Icon type="left" color="#fff" />
+          </div>
+          <p>详情</p>
+        </header>
         <WhiteSpace />
         <Tabs tabs={tabs} renderTabBar={props => <Tabs.DefaultTabBar {...props} page={4} />}>
         <Link to="/shopDetail">
@@ -161,4 +168,16 @@ class Detail extends Component {
   }
 }
 
-export default Detail;
+const mapStateToProps = () => {
+  return {
+
+  }
+}
+
+const mapDispatchToProps = () => {
+  return {
+
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Detail);

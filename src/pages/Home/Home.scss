@@ -4,6 +4,8 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+/*   width: 100%;
+  overflow: hidden; */
 }
 .content{
   flex: 1;
@@ -12,9 +14,9 @@
 .home-header{
   background-image: linear-gradient(90deg,#0af,#0085ff);
   padding: 2vw 3.733333vw;
-  position: sticky;
-  top: 0;
-  z-index: 99;
+  // position: sticky;
+  // top: 0;
+  // z-index: 99;
   .searchInput{
     display: flex;
     height: .96rem;
@@ -170,22 +172,27 @@
     display: flex;
     justify-content: space-between;
     color: #666;
+    font-size: .293333rem;
+    line-height: normal;
+    position: relative;
+    margin-bottom: 5px;
     .stars{
       flex: 1;
       width: 200px;
     }
     .BirdPost{
       color: #fff;
-      border: .133333vw solid #0097ff;
-      background-image: -webkit-linear-gradient(45deg,#0085ff,#0af);
-      background-image: linear-gradient(45deg,#0085ff,#0af);
+      text-align: center;
+      line-height: 22px;
+      font-size: 10px;
+      position: absolute;
+      right:-110px;
     }
   }
 }
 .shops_list_foot{
   width: 100%;
   height: 71px;
-  // background: #ccc;
   color: #666;
   padding-left: 22.666667vw;
   .shops_list_foot_Good{
@@ -258,7 +265,6 @@
   justify-content: flex-start;
   height: 35px;
   line-height: 35px;
-  // width: 383px;
   background-image: linear-gradient(90deg,#0af,#0085ff);
   color: #fff;
   padding: 2.666667vw 3.733333vw 0;
@@ -267,20 +273,148 @@
 .p_banner{
   width: 100%;
   height: 100%;
-  display: none;
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
-  background: #fff;
+  background-color: #f4f4f4;
   z-index: 9999;
   position: fixed
 }
 .content-list{
   height: 150px;
   .slider-frame{
-    // overflow: visible !important;
     height: 180px !important;
     border: none
+  }
+}
+.elm-head-content{
+  line-height: 35px;
+}
+.p_Header{
+  line-height: 11.733333vw;
+  font-size: .48rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-image: linear-gradient(90deg, #0af, #0085ff);
+  font-size:20px;
+  color: #fff;
+  .p_headRow{
+    width: 30px;
+    z-index: 999;
+  }
+}
+.location_search{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  line-height: 44px;
+  box-sizing: border-box;
+  padding-left:6px;
+  background: #fff;
+  .am-search {
+    background-color: #f4f4f4;
+  }
+  .searchInput{
+    flex: 1;
+    margin-left: 5px;
+    border: none;
+  }
+  .am-search-value{
+    border: none;
+  }
+}
+.currentAddress{
+  margin-top: 8px;
+  width: 100%;
+
+  line-height: 44px;
+  box-sizing: border-box;
+
+  background-color: #f4f4f4;
+  overflow: hidden;
+  p{
+    padding:0 10px;
+    font-size: 16px;
+    color: #333;
+    height: 44px;
+  }
+  .address{
+    background: #fff;
+    font-size: 14px;
+    height: 44px;
+  }
+}
+.new{
+  background: #fff;
+}
+.hotSearch{
+display: flex;
+justify-content: space-around;
+height: 50px;
+margin-top: 10px;
+line-height: 50px;
+font-size: 18px;
+color: #333;
+ input{
+   width: 270px;
+   height: 30px;
+   margin-top: 10px;
+   border: none;
+   outline: none;
+   background-color: #f4f4f4;
+   padding-left: 10px;
+   font-size: 14px;
+
+ }
+}
+.new  {
+  h3{
+  width: 100px;
+   margin-left: 10px;
+   font-size: 18px;
+   padding: 2vw 3.333333vw;
+   margin-top: 10px;
+
+  }
+  ul{
+    display: flex;
+    justify-content:flex-start;
+    box-sizing: border-box;
+    padding:0 10px;
+    flex-wrap: wrap;
+    li{
+      width: 25%;
+      border-radius: .666667vw;
+      padding: 2vw 2.666667vw;
+      font-size: .373333rem;
+      margin-right: 3.333333vw;
+      margin-top: 3.333333vw;
+      color: #666;
+      background-color: #f7f7f7;
+      text-align: center;
+    }
+  }
+}
+#fiexed{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+}
+#cancel{
+  width: 100%;
+  position: relative;
+}
+.postMoney{
+  font-size: 10px;
+
+}
+.posst{
+  position: relative;
+  .postDistance{
+    position: absolute;
+    right: -100px;
   }
 }
