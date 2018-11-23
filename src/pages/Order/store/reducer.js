@@ -1,6 +1,7 @@
-import { INIT_LIST } from './actionTypes';
+import { INIT_LIST, GET_COOKIE } from './actionTypes';
 const defaultState = {
-  list: []
+  list: [],
+  userID: '',
 }
 
 export default (state = defaultState, action) => {
@@ -9,5 +10,12 @@ export default (state = defaultState, action) => {
     newState.list = action.list;
     return newState;
   }
+
+  if(action.type === GET_COOKIE) {
+    let newState = JSON.parse(JSON.stringify(state));
+    newState.userID = action.userID;
+    return newState;
+  }
+
   return state;
 }
