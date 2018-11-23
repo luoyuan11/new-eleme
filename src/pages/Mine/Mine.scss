@@ -25,6 +25,10 @@
       p{
         font-size: 12px;
         line-height: 2.5;
+        span{
+          font-size: 12px;
+          line-height: 1;
+        }
       }
     }
     .more{
@@ -74,4 +78,43 @@
 }
 .address,.share{
   margin-bottom:10px;
+}
+.download{
+  margin-bottom: 166px;
+}
+//iconfont
+.icon-shouji-copy{
+  font-size: 20px;
+}
+.icon-tubiao207{
+  color: gold;
+  font-size: 28px;
+}
+.icon-entireEredWrap{
+  color: red;
+  font-size: 25px;
+}
+.icon-qianbao{
+  color:orange;
+  font-size: 28px;
+}
+.icon-dizhi{
+  color: #0085ff;
+  font-size: 20px;
+  margin: 0 10px;
+}
+.icon-daizi1{
+  color: green;
+  font-size: 20px;
+  margin: 0 10px;
+}
+.icon-liwuhuodong{
+  margin: 0 10px;
+  color:red;
+  font-size: 20px;
+}
+.icon-kefu,.icon-changyonglogo41{
+  margin: 0 10px;
+  color: #0af;
+  font-size: 19px;
 }
