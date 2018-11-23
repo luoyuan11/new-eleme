@@ -37,7 +37,7 @@ export const shopsIstAsync=()=>{
   return (dispatch,getStore)=>{
     axios.get(api_proxy+'https://h5.ele.me/restapi/shopping/v3/restaurants?latitude=22.53199&longitude=114.11768&offset=0&limit=8&extras[]=activities&extras[]=tags&extra_filters=home&rank_id=&terminal=h5')
     .then(res=>{
-       console.log(res.data.items);
+      //  console.log(res.data.items);
        var content=res.data.items;
        for(var i=0;i<content.length;i++){
         if(/png$/.test(content[i].restaurant.image_path)){
@@ -85,7 +85,7 @@ export const RowClick=()=>{
 
     axios.get(api_proxy+'https://h5.ele.me/restapi/shopping/v3/hot_search_words?latitude=25.44344&longitude=119.01042')
     .then(res=>{
-      console.log(res);
+      // console.log(res);
       dispatch({
         type:ROWCLICK,
          HotSearchList:res.data

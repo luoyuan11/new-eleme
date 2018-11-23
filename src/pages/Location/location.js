@@ -1,5 +1,5 @@
 import React ,{Component} from 'react';
-import store from '../../store/index';
+// import store from '../../store/index';
 
 
 class location extends Component {

@@ -32,7 +32,6 @@ class Home extends Component {
         store.dispatch(Header())
       }
   })
-
   }
 }
 
