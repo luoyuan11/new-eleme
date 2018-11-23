@@ -2,7 +2,6 @@ import React, { Component ,Fragment, } from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import store from './store';
 import { Provider } from 'react-redux';
-import Footer from './components/Footer';
 import Home from './pages/Home/Home';
 import Discover from './pages/Discover/Discover';
 import Order from './pages/Order/Order';
@@ -38,7 +37,6 @@ class App extends Component {
             <Route path="/pages/Home/Detail" component={Detail} />
 
             <Route path="/pages/Location/location" component={location}/>
-            <Footer />
           </Fragment>
         </Router>
       </Provider>

@@ -1,15 +1,52 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import './order.scss';
+import Footer from '../../components/Footer';
+import { Icon } from 'antd-mobile';
 
 const OrderUI = (props) => {
+  console.log(props)
   return (
-    <div className="OrderList">
-      {/* { props.list } */}
-      <section className="noDtata">
-        <img src="//fuss10.elemecdn.com/2/50/8019fbaebac2aaa76e2d9b5e5b407gif.gif" alt=""/>
-        <h3>购物车是空的</h3>
-      </section>
-    </div>
+    <Fragment>
+      <header>
+        <Icon type="left" color="#fff" />
+        <p>订单</p>
+      </header>
+      <div className="order" style={{ display: `${props.userID.aaa}` }}>
+        <ul className="goodsList">
+          {
+            props.list.map((item, index) => {
+              return (
+                <li key={index}>
+                  <img src={`https://fuss10.elemecdn.com/${item.restaurant_image_hash}`} alt=""/>
+                  <div className="goodsInfo">
+                    <div className="shopName">
+                      <span>{item.restaurant_name}</span>
+                      <p>{item.timeline_node.title}</p>
+                    </div>
+                      <p className="orderTime">{item.formatted_created_at}</p>
+                    <div className="goods_price">
+                      <span className="goods">{item.basket.group[0][0].name}</span>
+                      <p className="price">￥{item.basket.group[0][0].price}</p>
+                    </div>
+                    <div className="todo">
+                      <button>再来一单</button>
+                    </div>
+                  </div>
+                </li>
+              )
+            })
+          }
+        </ul>
+      </div>
+      <div className="unLogin" style={{ display: `${ props.userID.bbb }` }}>
+        <section>
+          <img src="https://fuss10.elemecdn.com/d/60/70008646170d1f654e926a2aaa3afpng.png" alt=""/>
+          <h3>登录后查看订单</h3>
+          <button>点击登录</button>
+        </section>
+      </div>
+      <Footer/>
+    </Fragment>
   )
 }
 
