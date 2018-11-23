@@ -3,7 +3,7 @@ import React,{Component,Fragment} from 'react'
 import { Link} from 'react-router-dom';
 import axios from 'axios'
 // import {connect} from '../../../'
-// import {register} from '../../../../node_modules/readux'
+import './Register.scss'
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 
 const FormItem = Form.Item;

@@ -6,14 +6,19 @@ import OrderReducer from '../pages/Order/store/reducer';
 import MineReducer from '../pages/Mine/store/reducer';
 import UserReducer from '../pages/User/store/reducer';
 import ShopDetailReducer from '../pages/ShopDetail/store/reducer';
+import LoginReducer from '../pages/User/Longin/store/reducer';
+import RegisterReducer from '../pages/User/Register/store/reducer';
 
-let zongdeReducers = combineReducers({
+let zongdeReducers = combineReducers(
+  {
   Home: HomeReducer,
   Discover:DiscoverReducer,
   Order:OrderReducer,
   Mine:MineReducer,
   User:UserReducer,
-  ShopDetail: ShopDetailReducer
+  ShopDetail: ShopDetailReducer,
+  Login:LoginReducer,
+  Register:RegisterReducer
 })
 
 // console.log(zongdeReducers);
