@@ -56,7 +56,6 @@ const mapDisPatchToProps = (dispatch) => {
         return 'https://fuss10.elemecdn.com/'+ imgurl + '.jpeg';
       }
     },
-
   }
 };
 export default connect(mapStateToProps, mapDisPatchToProps)(ShopDetail);

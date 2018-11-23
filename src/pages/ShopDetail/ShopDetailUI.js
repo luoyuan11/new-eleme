@@ -10,6 +10,11 @@ const ShopDetailUI = (props) => {
         <img src={props.getImg(props.shop_sign_image)} alt="" className="bg_hd" />
         <div className="bg_hd_mask"></div>
         <img src={props.getImg(props.brandImg)} alt="" className="brandImg" />
+        <i
+          className="iconfont icon-zuojiantou"
+          onClick={props.history.goBack}
+          >
+        </i>
       </div>
       <div className="hd_content">
         <h2 className="shopName">{props.name}</h2>
