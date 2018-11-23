@@ -105,7 +105,7 @@ class Detail extends Component {
           <div style={{ display: 'flex', padding: '15px 0' }}>
             <img style={{ height: '65px', marginRight: '15px' }} src={`https://fuss10.elemecdn.com/${obj.restaurant.image_path}`} alt="" />
             <div style={{ lineHeight: 1, color: '#666', fontSize: '12px' }}>
-              <div style={{ marginBottom: '5px', fontSize: '15px' }}>{obj.restaurant.name}</div>
+              <div style={{ marginBottom: '5px', fontSize: '15px', color:'#000'}}>{obj.restaurant.name}</div>
               <p>
                 <span style={{ color:'yellow' }}> ★★★★★ </span>
                 <span>{obj.restaurant.delivery_mode && obj.restaurant.delivery_mode.text}</span>
