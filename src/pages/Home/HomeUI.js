@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { SearchBar, Grid, Carousel, WingBlank } from 'antd-mobile';
 import { NavLink } from 'react-router-dom';
 import './Home.scss';
-import Header from '../../components/Header';
+// import Header from '../../components/Header';
 import Footer from '../../components/Footer'
 import { CSSTransition } from 'react-transition-group';
 const HomeUI = (props) => {
@@ -11,7 +11,7 @@ const HomeUI = (props) => {
     icon: `https://fuss10.elemecdn.com/${item.image_hash}.jpeg`,
     text: item.name,
   }));
-  console.log(props)
+  // console.log(props)
   return (
     <div className='All-Home'>
       <div>
@@ -22,10 +22,9 @@ const HomeUI = (props) => {
             <i className=' iconfont icon-drop-down'></i>
           </div>
 
-
         </div>
       </div>
-      <div className='home-header' onClick={props.hotsearch}>
+      <div className='home-header' onClick={props.hotsearch} id={props.conentClassName=== true ? 'fiexed' : 'cancel'}>
         <SearchBar placeholder="搜索饿了么商家,商品名称" className="searchInput"  />
       </div>
 
@@ -33,8 +32,8 @@ const HomeUI = (props) => {
       <div className='content'>
         <div className='content-list'>
           <NavLink to='/pages/Home/Detail' exact>
-            <WingBlank style={{ 'touchAction': 'none' }}>
-              <Grid data={data} isCarousel={true} infinite={true} dots={true} columnNum={5} />
+            <WingBlank style={{ 'touchAction': 'none' ,'border':'none'}}>
+              <Grid data={data} isCarousel={true} infinite={true} dots={true} columnNum={5} hasLine={false} />
             </WingBlank>
           </NavLink>
         </div>
@@ -95,7 +94,8 @@ const HomeUI = (props) => {
             {
               props.shopslist.map((item, index) => {
                 return (
-                  <li key={index}>
+                  <NavLink to='/shopDetail'  key={index}>
+                    <li>
                     <div className='shops_list_head'>
                       <div className='shops_list_left'>
                         <img src={`https://fuss10.elemecdn.com//${item.restaurant.image_path}`} />
@@ -105,7 +105,7 @@ const HomeUI = (props) => {
                         <p className='start_Mount'>
 
                           <span className="shopnum">
-                            <span style={{ "width": item.restaurant.rating * 12, "display": "inline-block", "overflow": "hidden" }}><svg width="60" height="10" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient x1="0%" y1="50%" y2="50%" id="a"><stop stop-color="#FFDE00" offset="0%" /><stop stop-color="#FFB000" offset="100%" /></linearGradient></defs><path d="M54.017 8.072l-2.552 1.561c-.476.291-.758.096-.626-.455l.696-2.909-2.273-1.944c-.424-.362-.325-.691.239-.736l2.982-.237L53.63.589c.213-.515.557-.523.774 0l1.146 2.763 2.982.237c.556.044.67.368.24.736l-2.274 1.944.696 2.91c.13.542-.143.75-.626.454l-2.551-1.56zm-48 0L3.465 9.633c-.476.291-.758.096-.626-.455l.696-2.909-2.273-1.944c-.424-.362-.325-.691.239-.736l2.982-.237L5.63.589c.213-.515.557-.523.774 0L7.55 3.352l2.982.237c.556.044.67.368.24.736L8.497 6.269l.696 2.91c.13.542-.143.75-.626.454l-2.551-1.56zm12 0l-2.552 1.561c-.476.291-.758.096-.626-.455l.696-2.909-2.273-1.944c-.424-.362-.325-.691.239-.736l2.982-.237L17.63.589c.213-.515.557-.523.774 0l1.146 2.763 2.982.237c.556.044.67.368.24.736l-2.274 1.944.696 2.91c.13.542-.143.75-.626.454l-2.551-1.56zm12 0l-2.552 1.561c-.476.291-.758.096-.626-.455l.696-2.909-2.273-1.944c-.424-.362-.325-.691.239-.736l2.982-.237L29.63.589c.213-.515.557-.523.774 0l1.146 2.763 2.982.237c.556.044.67.368.24.736l-2.274 1.944.696 2.91c.13.542-.143.75-.626.454l-2.551-1.56zm12 0l-2.552 1.561c-.476.291-.758.096-.626-.455l.696-2.909-2.273-1.944c-.424-.362-.325-.691.239-.736l2.982-.237L41.63.589c.213-.515.557-.523.774 0l1.146 2.763 2.982.237c.556.044.67.368.24.736l-2.274 1.944.696 2.91c.13.542-.143.75-.626.454l-2.551-1.56z" fill="url(#a)" fill-rule="evenodd" /></svg></span>
+                            <span style={{ "width": item.restaurant.rating * 12, "display": "inline-block", "overflow": "hidden" }}><svg width="60" height="10" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient x1="0%" y1="50%" y2="50%" id="a"><stop stopColor="#FFDE00" offset="0%" /><stop stopColor="#FFB000" offset="100%" /></linearGradient></defs><path d="M54.017 8.072l-2.552 1.561c-.476.291-.758.096-.626-.455l.696-2.909-2.273-1.944c-.424-.362-.325-.691.239-.736l2.982-.237L53.63.589c.213-.515.557-.523.774 0l1.146 2.763 2.982.237c.556.044.67.368.24.736l-2.274 1.944.696 2.91c.13.542-.143.75-.626.454l-2.551-1.56zm-48 0L3.465 9.633c-.476.291-.758.096-.626-.455l.696-2.909-2.273-1.944c-.424-.362-.325-.691.239-.736l2.982-.237L5.63.589c.213-.515.557-.523.774 0L7.55 3.352l2.982.237c.556.044.67.368.24.736L8.497 6.269l.696 2.91c.13.542-.143.75-.626.454l-2.551-1.56zm12 0l-2.552 1.561c-.476.291-.758.096-.626-.455l.696-2.909-2.273-1.944c-.424-.362-.325-.691.239-.736l2.982-.237L17.63.589c.213-.515.557-.523.774 0l1.146 2.763 2.982.237c.556.044.67.368.24.736l-2.274 1.944.696 2.91c.13.542-.143.75-.626.454l-2.551-1.56zm12 0l-2.552 1.561c-.476.291-.758.096-.626-.455l.696-2.909-2.273-1.944c-.424-.362-.325-.691.239-.736l2.982-.237L29.63.589c.213-.515.557-.523.774 0l1.146 2.763 2.982.237c.556.044.67.368.24.736l-2.274 1.944.696 2.91c.13.542-.143.75-.626.454l-2.551-1.56zm12 0l-2.552 1.561c-.476.291-.758.096-.626-.455l.696-2.909-2.273-1.944c-.424-.362-.325-.691.239-.736l2.982-.237L41.63.589c.213-.515.557-.523.774 0l1.146 2.763 2.982.237c.556.044.67.368.24.736l-2.274 1.944.696 2.91c.13.542-.143.75-.626.454l-2.551-1.56z" fill="url(#a)" fillRule="evenodd" /></svg></span>
                             {item.restaurant.rating}
                             <span></span>月售{item.restaurant.recent_order_num}单 </span>
 
@@ -132,6 +132,7 @@ const HomeUI = (props) => {
                       </p>
                     </div>
                   </li>
+                  </NavLink>
                 )
               })
             }

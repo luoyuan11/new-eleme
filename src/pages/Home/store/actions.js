@@ -10,3 +10,7 @@ export const ONCLICK ='ONCLICK';
 export const ROWCLICK ='ROWCLICK';
 
 export const HOTSEARCH= 'HOTSEARCH';
+
+export const SCROLLTOP ='SCROLLTOP';
+
+export const HEADER ='HEADER';

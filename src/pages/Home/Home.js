@@ -1,29 +1,17 @@
 import React, { Component } from 'react';
-import { initLIstAsync, bannerIstAsync, shopsIstAsync, PositionAsync ,toggle ,RowClick ,hotsearch} from './store/actionCteators'
+import { initLIstAsync, bannerIstAsync, shopsIstAsync, PositionAsync ,toggle ,RowClick ,hotsearch,windowOnScroll ,Header} from './store/actionCteators'
 import HomeUI from './HomeUI.js';
 import { connect } from 'react-redux';
 import store from '../../store/index';
 import { SearchBar, Grid, Carousel, WingBlank } from 'antd-mobile';
 import { NavLink } from 'react-router-dom';
 import './Home.scss';
-import Header from '../../components/Header';
+// import Header from '../../components/Header';
 import Footer from '../../components/Footer'
 
 
 class Home extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      show: true
-    };
-    // this.toggle = this.toggle.bind(this);
-  }
 
-  // toggle() {
-  //   this.setState({
-  //     show: !this.state.show
-  //   })
-  // }
   render() {
     return (
       <HomeUI {...this.props}></HomeUI>
@@ -35,6 +23,16 @@ class Home extends Component {
     store.dispatch(shopsIstAsync());
     store.dispatch(PositionAsync());
     store.dispatch(RowClick());
+
+    window.addEventListener('scroll',function(){
+      var h=this.window.scrollY;
+      if(h>35){
+        store.dispatch(windowOnScroll());
+      }else{
+        store.dispatch(Header())
+      }
+  })
+
   }
 }
 
@@ -46,7 +44,8 @@ const mapStateToProps = ({ Home }) => {
     position: Home.position,
     show:Home.show,
     HomeShow:Home.HomeShow,
-    HotSearchList:Home.HotSearchList
+    HotSearchList:Home.HotSearchList,
+    conentClassName:Home.conentClassName
   }
 };
 
@@ -57,7 +56,11 @@ const mapDispatchToProps = (dispatch)=>{
     },
     hotsearch:()=>{
       dispatch(hotsearch())
+    },
+    windowOnScroll:()=>{
+      dispatch(windowOnScroll());
     }
+
   }
 };
 

@@ -1,8 +1,8 @@
 // import store from './index';
 import axios from 'axios';
-import { dispatch } from 'rxjs/internal/observable/pairs';
+// import { dispatch } from 'rxjs/internal/observable/pairs';
 
-import { AXIOS_INIT ,BANNER_LIST ,SHOPS_LIST ,LOCATION, ONCLICK,ROWCLICK ,HOTSEARCH} from './actions'
+import { AXIOS_INIT ,BANNER_LIST ,SHOPS_LIST ,LOCATION, ONCLICK,ROWCLICK ,HOTSEARCH ,SCROLLTOP ,HEADER} from './actions'
 
 
 export const initLIstAsync=()=>{
@@ -94,3 +94,13 @@ export const RowClick=()=>{
 
   }
 }
+export const windowOnScroll=()=>{
+    return{
+      type:SCROLLTOP
+    }
+}
+ export const Header=()=>{
+   return {
+     type:HEADER
+   }
+ }

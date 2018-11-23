@@ -12,9 +12,9 @@
 .home-header{
   background-image: linear-gradient(90deg,#0af,#0085ff);
   padding: 2vw 3.733333vw;
-  position: sticky;
-  top: 0;
-  z-index: 99;
+  // position: sticky;
+  // top: 0;
+  // z-index: 99;
   .searchInput{
     display: flex;
     height: .96rem;
@@ -375,9 +375,12 @@ color: #333;
   }
   ul{
     display: flex;
-    justify-content:space-around;
+    justify-content:flex-start;
+    box-sizing: border-box;
+    padding:0 10px;
     flex-wrap: wrap;
     li{
+      width: 25%;
       border-radius: .666667vw;
       padding: 2vw 2.666667vw;
       font-size: .373333rem;
@@ -385,6 +388,19 @@ color: #333;
       margin-top: 3.333333vw;
       color: #666;
       background-color: #f7f7f7;
+      text-align: center;
     }
   }
+}
+#fiexed{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+}
+#cancel{
+  width: 100%;
+  position: relative;
+  // top: 35px;
+
 }

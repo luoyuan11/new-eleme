@@ -1,5 +1,5 @@
 
- import { AXIOS_INIT ,BANNER_LIST ,SHOPS_LIST ,LOCATION,ONCLICK ,ROWCLICK ,HOTSEARCH } from './actions';
+ import { AXIOS_INIT ,BANNER_LIST ,SHOPS_LIST ,LOCATION,ONCLICK ,ROWCLICK ,HOTSEARCH ,SCROLLTOP ,HEADER} from './actions';
 const defaultState = {
   HomeList:[],
   bannerList:[],
@@ -12,6 +12,7 @@ const defaultState = {
   HotSearchList:[],
   show:false,
   HomeShow:false,
+  conentClassName:false
 }
 
 export default (state = defaultState,action) =>{
@@ -19,6 +20,7 @@ export default (state = defaultState,action) =>{
      if(action.type===AXIOS_INIT){
        let newHomeList =Object.assign({},state);
        newHomeList.HomeList=action.data;
+
        return newHomeList;
         // console.log(newHomeList);
      }
@@ -53,6 +55,8 @@ export default (state = defaultState,action) =>{
     if(action.type===ROWCLICK){
       let newposition =Object.assign({},state);
       newposition.HotSearchList=action.HotSearchList;
+      newposition.conentClassName=false;
+
       return newposition;
     }
 
@@ -60,6 +64,16 @@ export default (state = defaultState,action) =>{
       console.log(11111111111111111);
       let newposition = Object.assign({},state);
       newposition.HomeShow=!newposition.HomeShow;
+      return newposition;
+    }
+    if(action.type ===SCROLLTOP){
+      let newposition = Object.assign({},state);
+      newposition.conentClassName=true
+      return newposition;
+    }
+    if(action.type===HEADER){
+      let newposition = Object.assign({},state);
+      newposition.conentClassName=false;
       return newposition;
     }
     return state;
