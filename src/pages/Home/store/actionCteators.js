@@ -37,7 +37,7 @@ export const shopsIstAsync=()=>{
   return (dispatch,getStore)=>{
     axios.get('/api/HomeShopsList.json')
     .then(res=>{
-       console.log(res.data.items);
+      //  console.log(res.data.items);
        var content=res.data.items;
        for(var i=0;i<content.length;i++){
         if(/png$/.test(content[i].restaurant.image_path)){
