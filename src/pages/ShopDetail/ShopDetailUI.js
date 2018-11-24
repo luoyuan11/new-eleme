@@ -132,12 +132,12 @@ const ShopDetailUI = (props) => {
             此内容为评价。。。。。。，，待写，，，程序猿已累崩。。。
           </div>
           <div className="shopStore">
-            <div className="shop_story">
+            {/* <div className="shop_story">
               <img src={props.getImg(props.storyImg)} alt=""/>
               <p className="storyTitle">{props.storyTitle}</p>
               <p className="storyBrief">{props.storyBrief}</p>
               <a href="#/" className="brandStory">查看品牌故事</a>
-            </div>
+            </div> */}
             <div className="deliveryInfo">
               <h4>配送信息</h4>
               <span className="delivery_people">由{props.delivery_people}提供配送，</span>

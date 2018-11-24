@@ -18,7 +18,7 @@ export default (state = defaultState, action) => {
   if(action.type === 'GET_SHOP_INFO') {
     let newState = JSON.parse(JSON.stringify(state));
     // newState.shopList = action.data;
-    newState.storyBrief = action.data.brand_intros[0].brief;
+    // newState.storyBrief = action.data.brand_intros[0].brief;
     newState.storyImg = action.data.header_image;
     newState.storyTitle = action.data.title;
     return newState;

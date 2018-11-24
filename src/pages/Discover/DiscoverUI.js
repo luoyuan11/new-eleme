@@ -11,6 +11,9 @@ const DiscoverUI = (props) => {
       <NavBar
         mode="dark"
         icon={<Icon type="left" />}
+        onLeftClick={()=>
+          props.history.goBack
+        }
       >
       发现
       </NavBar>
