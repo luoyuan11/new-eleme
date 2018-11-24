@@ -52,6 +52,7 @@ const ShopDetailUI = (props) => {
           tabs={props.tabs}
           initialPage={0}
           animated={false}
+          swipeable={false}
           useOnPan={false}>
           <div className="shopRecommend">
             <img src={props.getImg(props.recommend_banner)} alt="" className="recommend_banner" />

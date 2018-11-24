@@ -12,7 +12,7 @@ const DiscoverUI = (props) => {
         mode="dark"
         icon={<Icon type="left" />}
         onLeftClick={()=>
-          props.history.goBack
+          props.history.goBack()
         }
       >
       发现
