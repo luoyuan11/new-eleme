@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { outlogin } from "./store/actionCteators";
 import { connect } from 'react-redux';
 import UserinfoUI from './userInfoUI'
-
+import Cookie from 'react-cookies'
 
 class userInfo extends Component{
   render() {
@@ -33,6 +33,7 @@ const mapStateToProps=({userInfo})=>{
 const mapDispatchToProps=(dispatch)=>{
       return{
         outlogin:()=>{
+          Cookie.remove('userId')
           dispatch(outlogin())
         }
       }

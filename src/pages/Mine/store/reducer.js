@@ -1,7 +1,8 @@
 let defaultState ={
   title:'登录注册',
   header:'我的',
-  path:'/pages/Login'
+  path:'/pages/Login',
+  tip:'登录后享受更多'
 }
 
 

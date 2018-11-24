@@ -16,7 +16,7 @@ const MineUI = (props)=>{
                   </div>
                   <div className='user_login'>
                     <span>{props.title}</span>
-                    <p><i className=' iconfont icon-shouji-copy'></i><span>登录后享受更多特权</span></p>
+                    <p><i className=' iconfont icon-shouji-copy'></i><span>{props.tip}</span></p>
                   </div>
                   <span className='more'>&gt;</span>
               </Link>

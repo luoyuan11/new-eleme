@@ -1,11 +1,10 @@
-import Cookie from 'react-cookies'
 
 export const outlogin=()=>{
-  var username= { userId: Cookie.load('userId') }
-  console.log(username)
+  // var username= { userId: Cookie.remove('userId') }
+  // console.log(username)
+  // Cookie.remove('usreId')
   return{
     type:'OUTLOGIN',
-    value:username.userId,
     path:'/pages/Mine/Mine'
   }
 

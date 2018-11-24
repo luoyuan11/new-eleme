@@ -27,7 +27,8 @@ const mapStateToProps=({Mine})=>{
   return {
     title:Mine.title,
     header:Mine.header,
-    path:Mine.path
+    path:Mine.path,
+    tip:Mine.tip
   }
 };
 const mapDispatchToProps=(dispatch)=>{
