@@ -44,7 +44,7 @@ const OrderUI = (props) => {
         <section>
           <img src="https://fuss10.elemecdn.com/d/60/70008646170d1f654e926a2aaa3afpng.png" alt=""/>
           <h3>登录后查看订单</h3>
-          <Link to="/pages/Mine/Mine">
+          <Link to="/pages/Login">
             <button>点击登录</button>
           </Link>
         </section>

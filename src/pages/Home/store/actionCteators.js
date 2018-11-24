@@ -33,7 +33,7 @@ export const bannerIstAsync=()=>{
 }
 
 export const shopsIstAsync=()=>{
-  const api_proxy = 'https://bird.ioliu.cn/v1/?url=';
+  // const api_proxy = 'https://bird.ioliu.cn/v1/?url=';
   return (dispatch,getStore)=>{
     axios.get('/api/HomeShopsList.json')
     .then(res=>{

@@ -40,6 +40,7 @@ class Login extends Component {
         Cookie.save('userId', phoneNum)
         this.props.history.push('/pages/Mine/Mine')
       }else if(res.status===404){
+        alert('用户名或密码有误')
         // this.props.history.push('/Regiser')
         console.log('失败')
       }
@@ -57,7 +58,7 @@ class Login extends Component {
           <Form onSubmit={this.handleSubmit} className="login-form">
             <FormItem>
               {getFieldDecorator('phoneNum', {
-                rules: [{ required: true, message: '请输入手机号!' }],
+                rules: [{ required: true, message: '请输入手机号!' },{pattern:/^1[345678]\d{9}$/,message:'输入正确手机号'}],
               })(
                 <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="手机号"  style={{height:'50px'}}/>
               )}

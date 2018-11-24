@@ -18,19 +18,19 @@ const userinfoUI = (props)=>{
             <div className="goldShop List_shing">
               <span><i className=' iconfont icon-daizi1'></i></span>
               <Link className="my_goldShop" to=''>用户名</Link>
-              <span>{props.title}</span>
+              <span className='userNum'>{props.title}</span>
             </div>
             <div className='bindPhone'>绑定手机</div>
             <div className="shar List_shing">
               <span><i className=' iconfont icon-shouji-copy'></i></span>
-              <Link className="my_share" to=''>手机</Link>
-              <span>{props.title}</span>
+              <Link className="my_share" to=''>手机号</Link>
+              <span className='bindNum'>{props.title}</span>
             </div>
             <div className='anquan'>安全设置</div>
             <div className="service List_shing">
               <span><i className=' iconfont icon-kefu'></i></span>
               <Link className="my_service " to=''>登陆密码</Link>
-              <Link to=''>未设置</Link>
+              <Link to='' className='shezhi'>未设置</Link>
             </div>
             <NavLink  to={{pathname:`${props.path}`}}  className="outLogin List_shing" onClick={props.outlogin}>
             退出登录
