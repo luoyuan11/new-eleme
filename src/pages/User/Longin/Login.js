@@ -36,7 +36,7 @@ class Login extends Component {
   .then(res=>{
       if(res.status===200&&res.data.code===0){
         console.log('成功')
-        console.log(phoneNum)
+        alert('登录成功')
         Cookie.save('userId', phoneNum)
         this.props.history.push('/pages/Mine/Mine')
       }else if(res.status===404){
@@ -52,7 +52,7 @@ class Login extends Component {
     return (
       <Fragment>
           <div className='eleme_logo'>
-              <img src="/src/images/eleme.png" alt=""/>
+              <i className='iconfont icon-changyonglogo41 ' ></i>
           </div>
           <Form onSubmit={this.handleSubmit} className="login-form">
             <FormItem>
@@ -74,13 +74,13 @@ class Login extends Component {
                 valuePropName: 'checked',
                 initialValue: true,
               })(
-                <Checkbox style={{width:'50%'}}>Remember me</Checkbox>
+                <Checkbox style={{width:'50%'}}>记住我</Checkbox>
               )}
-              <Link className="login-form-forgot" to="./Register" style={{width:'50%'}}>Forgot password</Link>
+              <Link className="login-form-forgot" to="./Register" style={{width:'50%'}}>忘记密码</Link>
               <Button type="primary" htmlType="submit" className="login-form-button" style={{width:'100%'}}>
-                Log in
+                登录
               </Button>
-              Or <NavLink to="/pages/Register" style={{width:'80%'}}>register now!</NavLink>
+              或 <NavLink to="/pages/Register" style={{width:'80%'}}>去注册!</NavLink>
             </FormItem>
           </Form>
 
